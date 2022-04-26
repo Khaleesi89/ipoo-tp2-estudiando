@@ -67,21 +67,45 @@ class Disquera{
         return $info;
     }
 
-    /*public function dentroHorarioAtencion($hora, $min){
+
+    //que dada una hora y minutos retorna true si la tienda debe encontrarse abierta en ese horario y
+    // false en caso contrario.
+    
+    public function dentroHorarioAtencion($hora, $min){
         //convertir en array la hora de apertura
         $arrayStrHour = $this->getHora_desde();
         $arrayHorarioAtencion = explode(":",$arrayStrHour);
         $hour = $arrayHorarioAtencion[0];
-        $minute = $arrayHorarioAtencion[1];
+        //$minute = $arrayHorarioAtencion[1];
         //convertir en array la hora de cierre
         $arrayStrHour2 = $this->getHora_hasta();
         $arrayHorarioCierre = explode(":",$arrayStrHour2);
         $hour2 = $arrayHorarioCierre[0];
         $minute2 = $arrayHorarioCierre[1];
-        if ($hora >)
+        $bandera = false;
+        if ($hora >= $hour && $hora <= $hour2){
+            if($min <= $minute2){
+                $bandera = true;
+            }
+        }
+        return $bandera;
         
-    }*/
+    }
 
 
+    //que dada una hora y minutos corrobora que se encuentra dentro del horario de atención 
+    //y cambia el estado de la disquera solo si es un horario válido para su apertura.
+
+
+    public function abrirDisquera($hora,$minutos){
+    }
+
+
+
+    //que dada una hora y minutos corrobora que se encuentra fuera del horario de atención y 
+    //cambia el estado de la disquera solo si es un horario válido para su cierre.
+
+    public function abrirDisquera($hora,$minutos){
+    }
 
 }
