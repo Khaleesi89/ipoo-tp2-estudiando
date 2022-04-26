@@ -1,4 +1,4 @@
-<?php
+<<?php
 
 class Persona{
     private $nombre;
@@ -6,7 +6,7 @@ class Persona{
     private $tipoDocumento;
     private $nroDocumento;
 
-    private function __construct($name, $surname,$tipoIdent,$id){
+    public function __construct($name, $surname,$tipoIdent,$id){
         $this->nombre = $name;
         $this->apellido= $surname;
         $this->tipoDocumento= $tipoIdent;
@@ -43,5 +43,16 @@ class Persona{
 
     public function setNroDocumento($id){
         $this->nroDocumento = $id;
+    }
+
+    public function __toString(){
+        $info = "
+        NOMBRE: {$this->getNombre()}
+        APELLIDO: {$this->getApellido()}
+        TIPO DE DOCUMENTO: {$this->getTipoDocumento()}
+        NUMERO DE DOCUMENTO: {$this->getNroDocumento()}
+        ";
+        return $info;
+        
     }
 }
