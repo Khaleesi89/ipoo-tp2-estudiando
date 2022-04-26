@@ -15,10 +15,6 @@ class Disquera{
         $this->Dueño = $owner;
     }
     
-    
-        
-    
-
     public function getHora_desde(){
         return $this->hora_desde;
     }
@@ -58,4 +54,10 @@ class Disquera{
     public function setDueño($owner){
         $this->Dueño = $owner;
     }
+
+    public function dentroHorarioAtencion($hora, $min){
+        $hour = $this
+        $minute = $this
+    }
+
 }
