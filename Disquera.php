@@ -76,7 +76,7 @@ class Disquera{
         $arrayStrHour = $this->getHora_desde();
         $arrayHorarioAtencion = explode(":",$arrayStrHour);
         $hour = $arrayHorarioAtencion[0];
-        //$minute = $arrayHorarioAtencion[1];
+        $minute = $arrayHorarioAtencion[1];
         //convertir en array la hora de cierre
         $arrayStrHour2 = $this->getHora_hasta();
         $arrayHorarioCierre = explode(":",$arrayStrHour2);
@@ -84,7 +84,7 @@ class Disquera{
         $minute2 = $arrayHorarioCierre[1];
         $bandera = false;
         if ($hora >= $hour && $hora <= $hour2){
-            if($min <= $minute2){
+            if($min <= $minute2 || $min < $minute){ 
                 $bandera = true;
             }
         }
@@ -98,6 +98,12 @@ class Disquera{
 
 
     public function abrirDisquera($hora,$minutos){
+        $cambioEstado = $this->dentroHorarioAtencion($hora,$minutos);
+        if($cambioEstado){
+            $this->setEstado("Abierto");
+        }else{
+            $this->setEstado("Cerrado");
+        }
     }
 
 
@@ -105,7 +111,7 @@ class Disquera{
     //que dada una hora y minutos corrobora que se encuentra fuera del horario de atención y 
     //cambia el estado de la disquera solo si es un horario válido para su cierre.
 
-    public function abrirDisquera($hora,$minutos){
-    }
+    /*public function abrirDisquera($hora,$minutos){
+    }*/
 
 }

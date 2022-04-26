@@ -15,17 +15,21 @@ $objDuenio = new Persona($nombreOwner,$apellidoOwner,$tipId,$numerId);
 $objDiskera = new Disquera ($horaApertura,$horaCierre,$estado,$direccion,$objDuenio);
 
 echo $objDiskera;
-echo "ponga la hora a verificar: ";
-$horitas= trim(gets(STDIN));
-echo "ponga el minuto a verificar: ";
-$minutitos= trim(gets(STDIN));
-echo "estas dentro del horario? ";
+echo "ponga la hora a verificar: \n";
+$horitas= trim(fgets(STDIN));
+echo "ponga el minuto a verificar: \n";
+$minutitos= trim(fgets(STDIN));
+echo "estas dentro del horario? \n";
 
 $horarioVerificar = $objDiskera->dentroHorarioAtencion($horitas,$minutitos);
 if($horarioVerificar){
-    echo "Está en horario de atencion";
+    echo "Está en horario de atencion \n";
 
 }else{
-    echo "No esta en horario de atencion";
+    echo "No esta en horario de atencion \n";
 }
+
+echo "corresponde abrir la disquera? \n";
+$siCorresponde = $objDiskera->abrirDisquera($horitas,$minutitos);
+echo $objDiskera;
 
