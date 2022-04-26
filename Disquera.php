@@ -56,8 +56,11 @@ class Disquera{
     }
 
     public function dentroHorarioAtencion($hora, $min){
-        $hour = $this
-        $minute = $this
+        $arrayStrHour = $this->getHora_desde();
+        $arrayHorarioAtencion = explode(":",$arrayStrHour);
+        //$hour = $arrayHorarioAtencion
+        //$minute = $this
+        print_r($arrayHorarioAtencion);
     }
 
 }
