@@ -55,12 +55,33 @@ class Disquera{
         $this->Dueño = $owner;
     }
 
-    public function dentroHorarioAtencion($hora, $min){
+    public function __toString(){
+        
+        $info = "
+        HORARIO DESDE: {$this->getHora_desde()}
+        HORARIO HASTA: {$this->getHora_hasta()}
+        ESTADO: {$this->getEstado()}
+        DIRECCION: {$this->getDireccion()}
+        DUEÑO: {$this->getDueño()}
+        ";
+        return $info;
+    }
+
+    /*public function dentroHorarioAtencion($hora, $min){
+        //convertir en array la hora de apertura
         $arrayStrHour = $this->getHora_desde();
         $arrayHorarioAtencion = explode(":",$arrayStrHour);
-        //$hour = $arrayHorarioAtencion
-        //$minute = $this
-        print_r($arrayHorarioAtencion);
-    }
+        $hour = $arrayHorarioAtencion[0];
+        $minute = $arrayHorarioAtencion[1];
+        //convertir en array la hora de cierre
+        $arrayStrHour2 = $this->getHora_hasta();
+        $arrayHorarioCierre = explode(":",$arrayStrHour2);
+        $hour2 = $arrayHorarioCierre[0];
+        $minute2 = $arrayHorarioCierre[1];
+        if ($hora >)
+        
+    }*/
+
+
 
 }
