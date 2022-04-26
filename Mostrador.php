@@ -1,9 +1,9 @@
 <?php
 
-class Banco{
+class Mostrador{
     private $tipoTramite;
-    private $colaClientes;
-    private $
+    private $colaClientes =[];
+    
 
 
 
